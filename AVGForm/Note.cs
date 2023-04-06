@@ -5,31 +5,47 @@
         private int _sum = 0;
         private int _qty = 0;
 
-        private DelegateShowNotes _show_notes;
+        /// <summary>
+        /// Delegate for showing notes.
+        /// </summary>
+        private DelegateShowNotes _showNotes;
 
         public Note(DelegateShowNotes show_notes)
         {
-            _show_notes = show_notes;
+            _showNotes = show_notes;
             Clear();
         }
 
+        /// <summary>
+        /// Adds a note to the current sum and quantity of notes, and displays the average and quantity of notes.
+        /// </summary>
+        /// <param name="note">The note to be added.</param>
         public void AddNote(int note)
         {
             if (note < 1 || note > 5)
                 return;
             _sum += note;
             _qty++;
-            _show_notes(getAvg(), getQty());
+            _showNotes(getAvg(), getQty());
         }
 
+        /// <summary>
+        /// Resets the sum and quantity to 0 and displays the average and quantity.
+        /// </summary>
         public void Clear()
         {
             _sum = 0;
             _qty = 0;
 
-            _show_notes(getAvg(), getQty());
+            _showNotes(getAvg(), getQty());
         }
 
+        /// <summary>
+        /// Calculates the average of the values stored in the object.
+        /// </summary>
+        /// <returns>
+        /// A string representation of the average value.
+        /// </returns>
         public string getAvg()
         {
             float avg;
@@ -42,9 +58,9 @@
             return avg.ToString("0.0");
         }
 
-        public string getQty()
-        {
-            return _qty.ToString();
-        }
+        /// <summary>
+        /// This method returns the quantity of the item as a string.
+        /// </summary>
+        public string getQty() => _qty.ToString();
     }
 }
