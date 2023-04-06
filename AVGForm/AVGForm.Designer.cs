@@ -38,8 +38,8 @@
             this.button_reset = new System.Windows.Forms.Button();
             this.label_avg = new System.Windows.Forms.Label();
             this.label_qty = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button_1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,7 +173,7 @@
             this.MinimumSize = new System.Drawing.Size(330, 320);
             this.Name = "AVGForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Средняя оценка";
+            this.Text = "AVG Calculator";
             this.tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
